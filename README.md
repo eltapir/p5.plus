@@ -1,7 +1,11 @@
 ## p5.plus ( !!! alpha stage / things will change !!! )
 ### (replacement for p5.start2d.js)
 
-<br />
+<br/>
+
+![Screenshot p5.plus](p5plus.webp "screenshot of p5.plus extension")
+
+<br/>
 
 p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 

@@ -1,6 +1,6 @@
 const canvasProperties = {
 
-    renderer: 'p2d',            // string: renderer => 'p2d', 'svg'
+    renderer: 'svg',            // string: renderer => 'p2d', 'svg'
 
     size: '297mm 210mm',        // string: space separated css width/height values or paper format
                                 // eg: '297mm 210mm' | '500px 250px' | 'A4' | 'LETTER'
