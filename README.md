@@ -3,7 +3,7 @@
 
 <br/>
 
-![Screenshot p5.plus](p5plus.webp "screenshot of p5.plus extension")
+![Screenshot p5.plus](./__assets/p5plus.jpg "screenshot of p5.plus extension")
 
 <br/>
 
