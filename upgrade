@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [ "$1" = "--npm" ]; then
-    npm i -g npm
-    npm install -g npm-check-updates
-fi
-
-ncu -u
-npm i
