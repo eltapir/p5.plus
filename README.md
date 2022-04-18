@@ -38,7 +38,7 @@ p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 
 ### EXAMPLES
 
-see the __artworks folder, or open with p5 web editor :
+see the __artworks folder, or see example with p5 web editor (link below):
 
 [p5.plus template](https://editor.p5js.org/ElTapir/sketches/GPNQjGTrg "p5.plus template")
 
