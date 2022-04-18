@@ -1,0 +1,103 @@
+@font-face {
+
+    font-family: system-sans;
+    font-style: normal;
+    font-weight: normal;
+    src: 
+        local("system-ui"),
+        local("-apple-system"),
+        local("BlinkMacSystemFont"),
+        local("Segoe UI"),
+        local("Liberation Sans"),
+        local("Roboto"),
+        local("Oxygen-Sans"),
+        local("Ubuntu"),
+        local("Cantarell"),
+        local("Noto Sans"),
+        local("Droid Sans"),
+        local("Helvetica Neue"),
+        local("sans-serif");
+}
+
+@font-face {
+
+    font-family: system-mono;
+    font-style: normal;
+    font-weight: normal;
+    src: 
+        local("ui-monospace"),
+        local("Cascadia Mono"),
+        local("Segoe UI Mono"),
+        local("Liberation mono"),
+        local("Ubuntu Mono"),
+        local("Roboto Mono"),
+        local("Menlo"),
+        local("Monaco"),
+        local("Consolas"),
+        local("monospace");
+}
+
+:root {
+
+    --font-family-sans: system-sans;
+    --font-family-mono: system-mono;
+
+    --multiple-artwork-gap-size: 3px;
+
+    --wallpaper-background: #444;
+
+    --xy-wrapper-height: 2.0rem;
+    --xy-pane-bgcolor: rgba(55, 55, 55, 0.25);//transparent;
+    --xy-pane-font-size: 0.7rem;
+    --xy-pane-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    --xy-pane-border-radius: 1000px;
+    --xy-pane-padding: 0.35rem 0.50rem 0.25rem;
+    --xy-pane-label-bgcolor: #555;
+    --xy-pane-label-color: #bbb;
+    --xy-pane-info-width: 12rem;
+    --xy-pane-info-bgcolor: #666;
+    --xy-pane-info-color: #fff;
+    --xy-pane-gap: 2px;
+
+    --burger-width: 1.2rem;
+    --burger-height: 1rem;
+    --burger-padding-top: 0.75rem;
+    --burger-padding-bottom: var(--burger-padding-top);
+    --burger-padding-right: 0.75rem;
+    --burger-padding-left: var(--burger-padding-right);
+    --burger-slice-height: 0.125rem;
+    --burger-color: #ddd;
+    --burger-cross-color: #b55;
+    --burger-animation-speed: 300ms;
+
+    --cmd-pane-color: #ccc;
+    --cmd-pane-bgcolor: #3e3f44;
+    --cmd-pane-width: 280px;
+    --cmd-pane-padding: var(--burger-padding-left);
+    --cmd-pane-padding-top: calc(2 * var(--burger-padding-top) + var(--burger-height));
+    --cmd-pane-slide-speed: var(--burger-animation-speed);
+
+    // tweakpane
+    // ---------------------------------------------------------------------------------------------
+    --tp-base-background-color: hsla(230, 7%, 17%, 1.00);
+    --tp-base-shadow-color: hsla(0, 0%, 0%, 0.20);
+    --tp-button-background-color: hsla(230, 7%, 70%, 1.00);
+    --tp-button-background-color-active: hsla(230, 7%, 85%, 1.00);
+    --tp-button-background-color-focus: hsla(230, 7%, 80%, 1.00);
+    --tp-button-background-color-hover: hsla(230, 7%, 75%, 1.00);
+    --tp-button-foreground-color: hsla(230, 7%, 17%, 1.00);
+    --tp-container-background-color: hsla(230, 7%, 75%, 0.10);
+    --tp-container-background-color-active: hsla(230, 7%, 75%, 0.25);
+    --tp-container-background-color-focus: hsla(230, 7%, 75%, 0.20);
+    --tp-container-background-color-hover: hsla(230, 7%, 75%, 0.15);
+    --tp-container-foreground-color: hsla(230, 7%, 75%, 1.00);
+    --tp-groove-foreground-color: hsla(230, 7%, 75%, 0.10);
+    --tp-input-background-color: hsla(230, 7%, 75%, 0.10);
+    --tp-input-background-color-active: hsla(230, 7%, 75%, 0.25);
+    --tp-input-background-color-focus: hsla(230, 7%, 75%, 0.20);
+    --tp-input-background-color-hover: hsla(230, 7%, 75%, 0.15);
+    --tp-input-foreground-color: hsla(230, 7%, 75%, 1.00);
+    --tp-label-foreground-color: hsla(230, 7%, 75%, 0.70);
+    --tp-monitor-background-color: hsla(230, 7%, 0%, 0.20);
+    --tp-monitor-foreground-color: hsla(230, 7%, 75%, 0.70);
+}

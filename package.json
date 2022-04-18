@@ -1,0 +1,56 @@
+{
+  "name": "p5.plus",
+  "version": "0.1.0",
+  "description": "p5.js plugin to help creating static generative art",
+  "scripts": {
+    "prebuild": "rm -rf lib",
+    "build": "NODE_ENV=production rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "last 5 versions"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "art",
+    "artwork",
+    "canvas",
+    "coding",
+    "creative",
+    "generative",
+    "p5",
+    "p5.js",
+    "plus",
+    "printable",
+    "rollup",
+    "svg",
+    "static",
+    "tinykeys",
+    "tweakpane"
+  ],
+  "author": "Kris HEYSE",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "postcss-preset-env": "^7.4.3",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sass": "^1.2.12",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "@tweakpane/plugin-essentials": "^0.1.4",
+    "tinykeys": "^1.4.0",
+    "tweakpane": "^3.0.8"
+  }
+}
