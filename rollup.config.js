@@ -68,7 +68,7 @@ export default [
 
 			commonjs(),
 
-            json(),
+			json(),
 
 			postcss({
 				inject: true,
