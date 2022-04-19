@@ -143,7 +143,56 @@ const utilities = {
         return result;
     },
 
-    __getFlatArray(inArray) {
+    // ---------------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------------
+
+    make2dArray(cols, rows) {
+
+        const arr = new Array(rows);
+
+        for (let x = 0; x < cols; x++) {
+            arr[x] = new Array(cols);
+        }
+        
+        // let counter = 1;
+    
+        // for (let y = 0; y < rows; y++) {
+        //     for (let x = 0; x < cols; x++) {
+        //         arr[x][y] = counter++;
+        //     }
+        // }
+    
+        return arr;
+    },
+
+    fill2dArray(arr, filler = 0) {
+
+        const cols = arr.length;
+        const rows = arr[0].length;
+
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                arr[x][y] = counter++;
+            }
+        }
+    },
+
+    countFill2dArray(arr, startVal = 0, step = 1) {
+
+        const cols = arr.length;
+        const rows = arr[0].length;
+
+        let counter = startVal;
+
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                arr[x][y] = counter;
+                counter += step;
+            }
+        }
+    },
+
+    getFlatArray(inArray) {
 
         let size = 0;
     
