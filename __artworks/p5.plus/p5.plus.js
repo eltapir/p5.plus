@@ -50,90 +50,6 @@
     /* ============================================================================================== */
 
 
-    // CONSTANTS
-    // =================================================================================================
-
-    const DEFAULT_COMMAND_HOT_KEYS = {
-
-        // loop
-        cmdLoop: 'Alt+Shift+L',
-        cmdLoopStep: '+',
-        cmdLoopMultiSteps: '*',
-
-        // zoom
-        cmdZoomFit: 'Alt+Shift+F',
-        cmdZoomOne: 'Alt+Shift+1',
-        cmdZoomMax: 'Alt+Shift+M',
-
-        // show/hide coordinates
-        cmdShowCoordinates: 'Alt+Shift+C',
-
-        // show/hide shadow
-        cmdShowShadow: 'Alt+Shift+S',
-
-        // export
-        cmdExport: 'Alt+Shift+E',
-    };
-
-    const DEFAULT_ARTWORK_PROPS = {
-
-        renderer: 'p2d',            // string: renderer => 'p2d', 'svg', 'webgl'
-
-        size: '297mm 210mm',        // string: space separated css width/height values or paper format
-                                    // eg: '297mm 210mm' | '500px 250px' | 'A4' | 'LETTER'
-
-        orientation: null,          // string: 'unchanged' (no change) | 'landscape' | 'portrait'
-                                
-        drawingUnits: 'mm',         // string: 'px' | 'mm' | 'cm' | 'in'
-
-        exportPPI: 300,             // number: export resolution
-        
-        zoomMax: 5.0,               // number: maximum zoom
-        zoomMin: 0.1,               // number: minimum zoom => can change to fit on screen
-        zoomInc: 0.01,              // number: zoom / scroll step size
-
-        screenPPI: 96,              // number: screen resolution (be aware of pixel density)
-        screenPadding: '15mm',      // string: space between artwork and window/screen border
-
-        shadowVisible: true,                    // boolean: shadow visible
-        shadowColor: 'rgba(64, 64, 64, 0.5)',   // string: shadow color (css notation)
-        shadowX: '0mm',                         // string: eg: '1cm' | 10mm
-        shadowY: '6mm',                         // string: eg: '0.4in' | 10mm
-        shadowBlur: '5mm',                      // string: eg: '5mm'
-
-        wallpaperBackground: '#888888',         // string: artwork container background
-        canvasColor: 'none',                    // string: svg element color (not exported)
-
-        outputFileName: 'aw-S@seed-D@date-L@loops',     // string: output file name
-                                                        // @seed == current seed value
-                                                        // @date == date & time
-                                                        // @loops == number of loops made (frameCount)
-                                                        // eg: artwork-@seed-@date-@loops
-                                                        // =>  name    seed   date    time  loops
-                                                        // =>  artwork-1234-20190513-161132-10000
-
-        saveInfoText: false,        // if true, save text file with info about the artwork
-                                    // contains: width, height, resolution, seed, noiseSeed, ...
-                    
-        xyDisplay: true,            // boolean: display mouse coordinates on artwork hover
-        xyDecimals: 2,              // number: number of decimals for mouse cooordinates display
-
-        seed: null,                 // number: random seed (null == random seed number)
-        noiseSeed: null,            // number: noise seed (null == random seed number) 
-        simplexSeed: null,          // number: simplex seed (null = random seed number)
-
-        multiLoopSteps: 10,             // number: number of loops for multi loop => key: alt + X
-
-        disableFriendlyErrors: true,    // boolean: friendly errors or not
-
-        commandHotKeys: {},             // object: see const DEFAULT_COMMAND_HOT_KEYS
-
-        showPane: true,                 // boolean: show / hide command/info pane
-        showPropertiesInPane: true,     // boolean: show / hide info properties
-        showHotkeysInPane: false,       // boolean: show / hide info hotkeys
-    };
-
-
     // P5 CLASS PROPERTIES
     // =================================================================================================
 
@@ -193,7 +109,7 @@
                 
                 if (arguments.length === 2) {
 
-                    this.__props = { ...DEFAULT_ARTWORK_PROPS, ...arg2 };
+                    this.__props = { ...this.DEFAULT_ARTWORK_PROPS, ...arg2 };
 
                     if (arg1.toUpperCase() in this.PAPER_SIZE) {
 
@@ -206,7 +122,7 @@
 
                 } else {
 
-                    this.__props = { ...DEFAULT_ARTWORK_PROPS, ...arg3 };
+                    this.__props = { ...this.DEFAULT_ARTWORK_PROPS, ...arg3 };
                     sizeArray = [arg1, arg2];
                 }
 
@@ -272,7 +188,7 @@
                 this.__multiLoopSteps = this.__props.multiLoopSteps;
                 this.__initialNumberOfLoops = this.__props.initialNumberOfLoops;
 
-                this.__cmdHotKeys = { ...DEFAULT_COMMAND_HOT_KEYS, ...this.__props.commandHotKeys };
+                this.__cmdHotKeys = { ...this.DEFAULT_COMMAND_HOT_KEYS, ...this.__props.commandHotKeys };
 
                 this.__showPane = this.__props.showPane;
                 this.__showPropertiesInPane = this.__props.showPropertiesInPane;
@@ -532,13 +448,96 @@
 
     const constants = {
 
-        // svg
+        // default hotkeys
 
-        XML_HEADER: '<?xml version="1.0"?>',
+        DEFAULT_COMMAND_HOT_KEYS: {
+
+            // loop
+            cmdLoop: 'Alt+Shift+L',
+            cmdLoopStep: '+',
+            cmdLoopMultiSteps: '*',
+        
+            // zoom
+            cmdZoomFit: 'Alt+Shift+F',
+            cmdZoomOne: 'Alt+Shift+O',
+            cmdZoomMax: 'Alt+Shift+M',
+        
+            // show/hide coordinates
+            cmdShowCoordinates: 'Alt+Shift+C',
+        
+            // show/hide shadow
+            cmdShowShadow: 'Alt+Shift+S',
+        
+            // export
+            cmdExport: 'Alt+Shift+E',
+        },
+
+        
+        // default artwork properties
+
+        DEFAULT_ARTWORK_PROPS: {
+
+            renderer: 'p2d',        // string: renderer => 'p2d', 'svg', 'webgl'
+        
+            orientation: null,      // string: 'unchanged' (no change) | 'landscape' | 'portrait'
+                                    
+            drawingUnits: 'mm',     // string: 'px' | 'mm' | 'cm' | 'in'
+        
+            exportPPI: 300,         // number: export resolution
+            
+            zoomMax: 5.0,           // number: maximum zoom
+            zoomMin: 0.1,           // number: minimum zoom => can change to fit on screen
+            zoomInc: 0.01,          // number: zoom / scroll step size
+        
+            screenPPI: 96,          // number: screen resolution (be aware of pixel density)
+            screenPadding: '15mm',  // string: space between artwork and window/screen border
+        
+            shadowVisible: true,                    // boolean: shadow visible
+            shadowColor: 'rgba(64, 64, 64, 0.5)',   // string: shadow color (css notation)
+            shadowX: '0mm',                         // string: eg: '1cm' | 10mm
+            shadowY: '6mm',                         // string: eg: '0.4in' | 10mm
+            shadowBlur: '5mm',                      // string: eg: '5mm'
+        
+            wallpaperBackground: '#888888',         // string: artwork container background
+            canvasColor: 'none',                    // string: svg element color (not exported)
+        
+            outputFileName: 'aw-S@seed-D@date-L@loops', // string: output file name
+                                                        // @seed == current seed value
+                                                        // @date == date & time
+                                                        // @loops == number of loops made (frameCount)
+                                                        // eg: artwork-@seed-@date-@loops
+                                                        // =>  name    seed   date    time  loops
+                                                        // =>  artwork-1234-20190513-161132-10000
+        
+            saveInfoText: false,    // if true, save text file with info about the artwork
+                                    // contains: width, height, resolution, seed, noiseSeed, ...
+                        
+            xyDisplay: true,        // boolean: display mouse coordinates on artwork hover
+            xyDecimals: 2,          // number: number of decimals for mouse cooordinates display
+        
+            seed: null,             // number: random seed (null == random seed number)
+            noiseSeed: null,        // number: noise seed (null == random seed number) 
+            simplexSeed: null,      // number: simplex seed (null = random seed number)
+        
+            multiLoopSteps: 10,     // number: number of loops for multi loop => key: alt + X
+        
+            disableFriendlyErrors: true,    // boolean: friendly errors or not
+        
+            commandHotKeys: {},             // object: see const DEFAULT_COMMAND_HOT_KEYS
+        
+            showPane: true,                 // boolean: show / hide command/info pane
+            showPropertiesInPane: true,     // boolean: show / hide info properties
+            showHotkeysInPane: false,       // boolean: show / hide info hotkeys
+        },
+        
+
+        // svg headers / namespaces
+
         SVG_NS: 'http://www.w3.org/2000/svg',
-        SVG_XMLNS: 'http://www.w3.org/2000/xmlns/',
+        SVG_VERSION: '1.1',
         SVG_XLINK: 'http://www.w3.org/1999/xlink',
-        SVG_VERSION: '1.1'
+        SVG_XMLNS: 'http://www.w3.org/2000/xmlns/',
+        XML_HEADER: '<?xml version="1.0"?>'
     };
 
     /* ============================================================================================== */

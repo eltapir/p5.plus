@@ -104,7 +104,7 @@ new p5(function(aw) {
 
     aw.setup = function() {
 
-        aw.createCanvas('a4', { ...canvasProperties, renderer: 'svg' });
+        aw.createCanvas('A4', { ...canvasProperties, renderer: 'svg' });
         aw.background(255);
 
         aw.strokeWeight(3);
