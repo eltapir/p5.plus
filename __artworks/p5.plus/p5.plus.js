@@ -56,14 +56,14 @@
     const DEFAULT_COMMAND_HOT_KEYS = {
 
         // loop
-        cmdLoop: 'L',
+        cmdLoop: 'Alt+Shift+L',
         cmdLoopStep: '+',
         cmdLoopMultiSteps: '*',
 
         // zoom
-        cmdZoomFit: 'F',
-        cmdZoomOne: '1',
-        cmdZoomMax: 'M',
+        cmdZoomFit: 'Alt+Shift+F',
+        cmdZoomOne: 'Alt+Shift+1',
+        cmdZoomMax: 'Alt+Shift+M',
 
         // show/hide coordinates
         cmdShowCoordinates: 'Alt+Shift+C',
@@ -72,7 +72,7 @@
         cmdShowShadow: 'Alt+Shift+S',
 
         // export
-        cmdExport: 'E',
+        cmdExport: 'Alt+Shift+E',
     };
 
     const DEFAULT_ARTWORK_PROPS = {
@@ -82,7 +82,7 @@
         size: '297mm 210mm',        // string: space separated css width/height values or paper format
                                     // eg: '297mm 210mm' | '500px 250px' | 'A4' | 'LETTER'
 
-        orientation: 'unchanged',   // string: 'unchanged' (no change) | 'landscape' | 'portrait'
+        orientation: null,          // string: 'unchanged' (no change) | 'landscape' | 'portrait'
                                 
         drawingUnits: 'mm',         // string: 'px' | 'mm' | 'cm' | 'in'
 
@@ -118,12 +118,9 @@
         xyDisplay: true,            // boolean: display mouse coordinates on artwork hover
         xyDecimals: 2,              // number: number of decimals for mouse cooordinates display
 
-        seed: null,                 // number: random seed ( -1 => no seed )
-        noiseSeed: null,            // number: random seed ( -1 => no seed )
-        simplexSeed: null,          // number: random seed ( -1 => no seed )
-
-        // !!!! error with p5.js-svg
-        // seedMathRandom: true,        // boolean: override the native js Math.random function
+        seed: null,                 // number: random seed (null == random seed number)
+        noiseSeed: null,            // number: noise seed (null == random seed number) 
+        simplexSeed: null,          // number: simplex seed (null = random seed number)
 
         multiLoopSteps: 10,             // number: number of loops for multi loop => key: alt + X
 
@@ -134,10 +131,6 @@
         showPane: true,                 // boolean: show / hide command/info pane
         showPropertiesInPane: true,     // boolean: show / hide info properties
         showHotkeysInPane: false,       // boolean: show / hide info hotkeys
-
-        // NOT IMPLEMENTED YET
-        initialNumberOfLoops: 0,        // number: number of loops to draw (0 = infinite)
-
     };
 
 
@@ -152,7 +145,9 @@
     // P5 CLASS METHODS
     // =================================================================================================
 
-    p5.extendObject = (tgtObj, srcObj, forceOverride = false) => {
+    p5.extend = (srcObj, proto = true, forceOverride = false) => {
+
+        const tgtObj = proto ? p5.prototype : p5;
 
         for (let key in srcObj) {
 
@@ -179,7 +174,7 @@
 
     p5.prototype.createCanvas = function($_createCanvas) {
 
-        return function(props = {}) {
+        return function(arg1, arg2, arg3, props = {}) {
 
             let cvs;
 
@@ -187,13 +182,34 @@
 
             this.__aw = null;
 
-            if (typeof props === 'object') {
+            if (
+                (arguments.length === 2 && typeof arg2 === 'object') || 
+                (arguments.length === 3 && typeof arg3 === 'object')
+            ) {
 
-                let sizeArray;
+                let sizeArray = [];
 
-                this.__props = { ...DEFAULT_ARTWORK_PROPS, ...props };
                 this.__p5mode = false;
                 
+                if (arguments.length === 2) {
+
+                    this.__props = { ...DEFAULT_ARTWORK_PROPS, ...arg2 };
+
+                    if (arg1.toUpperCase() in this.PAPER_SIZE) {
+
+                        sizeArray = this.PAPER_SIZE[arg1.toUpperCase()];
+
+                    } else {
+
+                        throw new Error('Invalid size argument');
+                    }
+
+                } else {
+
+                    this.__props = { ...DEFAULT_ARTWORK_PROPS, ...arg3 };
+                    sizeArray = [arg1, arg2];
+                }
+
                 p5.disableFriendlyErrors = this.__props.disableFriendlyErrors;
 
                 this.__renderer = this.__props.renderer == null ? this.P2D : this.__props.renderer;
@@ -204,33 +220,23 @@
                 this.__units = this.__props.drawingUnits;
                 this.__screenPadding = this.__props.screenPadding;
 
-                if (this.__props.size.toUpperCase() in this.PAPER_SIZE) {
-                    sizeArray = this.PAPER_SIZE[this.__props.size.toUpperCase()];
-                } else {
-                    sizeArray = this.__props.size.split(' ');
-                }
-
                 this.__cvsWidth = this.__toUnits(sizeArray[0], this.__units, this.__exportPPI);
                 this.__cvsHeight = this.__toUnits(sizeArray[1] || sizeArray[0], this.__units, this.__exportPPI);
-                this.__orientation = this.__props.orientation.toLowerCase();
+                this.__orientation = this.__props.orientation;
 
-                if (this.__orientation === this.PORTRAIT) {
+                if (this.__orientation && this.__orientation.toLowerCase() === this.PORTRAIT) {
 
                     let tmp = Math.min(this.__cvsWidth, this.__cvsHeight);
                     this.__cvsHeight = Math.max(this.__cvsWidth, this.__cvsHeight);
                     this.__cvsWidth = tmp;
 
-                } else if (this.__orientation === this.LANDSCAPE) {
+                } else if (this.__orientation && this.__orientation.toLowerCase() === this.LANDSCAPE) {
 
                     let tmp = Math.min(this.__cvsWidth, this.__cvsHeight);
                     this.__cvsWidth = Math.max(this.__cvsWidth, this.__cvsHeight);
                     this.__cvsHeight = tmp;
-
-                } else if (this.__orientation !== 'unchanged') {
-
-                    throw new Error('Your orientation value is not correct.');
                 }
-
+                
                 this.__zoomMin = this.__props.zoomMin;
                 this.__zoomMinCurrent = this.__zoomMin;
                 this.__zoomMax = this.__props.zoomMax;
@@ -253,9 +259,6 @@
                 this.__simplexSeed = this.__props.simplexSeed
                     ? this.__props.simplexSeed
                     : Math.floor(Math.random() * (10000 - 1000) + 1000);
-
-                // !!!! error in p5.js-svg
-                // if (this.__props.seedMathRandom) Math.random = this.random;
 
                 this.__wallpaperBackground = this.__props.wallpaperBackground;
                 this.__canvasColor = this.__props.canvasColor;
@@ -13382,18 +13385,18 @@
     // EXTENSIONS
     // =================================================================================================
 
-    p5.extendObject(p5.prototype, constants);
-    p5.extendObject(p5.prototype, core);
-    p5.extendObject(p5.prototype, info);
-    p5.extendObject(p5.prototype, output);
-    p5.extendObject(p5.prototype, paperSize);
-    p5.extendObject(p5.prototype, simplex);
-    p5.extendObject(p5.prototype, utilities);
+    p5.extend(constants);
+    p5.extend(core);
+    p5.extend(info);
+    p5.extend(output);
+    p5.extend(paperSize);
+    p5.extend(simplex);
+    p5.extend(utilities);
 
-    p5.extendObject(p5.prototype, cmdPane);
-    p5.extendObject(p5.prototype, commands);
-    p5.extendObject(p5.prototype, hotkeys);
-    p5.extendObject(p5.prototype, xyPane);
+    p5.extend(cmdPane);
+    p5.extend(commands);
+    p5.extend(hotkeys);
+    p5.extend(xyPane);
 
     // =================================================================================================
 

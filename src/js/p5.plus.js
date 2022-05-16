@@ -47,18 +47,18 @@ import { xyPane } from './ui/p5.plus.xyPane.js';
 // EXTENSIONS
 // =================================================================================================
 
-p5.extendObject(p5.prototype, constants);
-p5.extendObject(p5.prototype, core);
-p5.extendObject(p5.prototype, info);
-p5.extendObject(p5.prototype, output);
-p5.extendObject(p5.prototype, paperSize);
-p5.extendObject(p5.prototype, simplex);
-p5.extendObject(p5.prototype, utilities);
+p5.extend(constants);
+p5.extend(core);
+p5.extend(info);
+p5.extend(output);
+p5.extend(paperSize);
+p5.extend(simplex);
+p5.extend(utilities);
 
-p5.extendObject(p5.prototype, cmdPane);
-p5.extendObject(p5.prototype, commands);
-p5.extendObject(p5.prototype, hotkeys);
-p5.extendObject(p5.prototype, xyPane);
+p5.extend(cmdPane);
+p5.extend(commands);
+p5.extend(hotkeys);
+p5.extend(xyPane);
 
 // =================================================================================================
 
