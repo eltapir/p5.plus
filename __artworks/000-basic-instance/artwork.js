@@ -60,38 +60,46 @@ const canvasProperties = {
     }
 };
 
+let height2;
+
 new p5(function(aw) {
 
     aw.setup = function() {
 
-        aw.createCanvas(297, 210, canvasProperties);
+        aw.createCanvas(210, 297, canvasProperties);
         aw.background(255);
 
-        aw.strokeWeight(3);
+        aw.strokeWeight(2);
         aw.strokeCap(aw.ROUND);
     
         // aw.frameRate(1);
         // aw.loop();
 
         aw.textAlign(aw.CENTER, aw.CENTER);
-        aw.textSize(7);
-        aw.text('Set correct PPI to get the right measurements', aw.width * 0.5, aw.height * 0.5);
-        aw.text('(see screenPPI and exportPPI properties in artwork.js)', aw.width * 0.5, aw.height * 0.5 + 15);    
+        aw.textAlign(aw.CENTER, aw.CENTER);
+        aw.textSize(6);
+        aw.text('Set correct PPI to get the right measurements', aw.width * 0.5, 15);
+        aw.text('(see screenPPI and exportPPI properties in artwork.js)', aw.width * 0.5, 15 + 10);
+        aw.text('Press Alt+Shift+L (see commandHotKeys property) to start/stop the loop.', aw.width * 0.5, 15 + 20);
+    
+        aw.loop();
+    
+        height2 = aw.height - 50;
     }
 
     aw.draw = function() {
 
         const x1 = aw.random(aw.width);
-        const y1 = aw.random(aw.height);
+        const y1 = aw.random(height2);
         const x2 = aw.random(aw.width);
-        const y2 = aw.random(aw.height);
+        const y2 = aw.random(height2);
 
         const r = aw.random(256);
         const g = aw.random(256);
         const b = aw.random(256);
     
         aw.stroke(r, g, b);
-        aw.line(x1, y1, x2, y2);
+        aw.line(x1, y1 + 50, x2, y2 + 50);
     }
 });
 
@@ -103,30 +111,36 @@ new p5(function(aw) {
         aw.createCanvas('A4', { ...canvasProperties, renderer: 'svg' });
         aw.background(255);
 
-        aw.strokeWeight(3);
+        aw.strokeWeight(2);
         aw.strokeCap(aw.ROUND);
 
         // aw.frameRate(60);
         // aw.loop();
 
         aw.textAlign(aw.CENTER, aw.CENTER);
-        aw.textSize(7);
-        aw.text('Set correct PPI to get the right measurements', aw.width * 0.5, aw.height * 0.5);
-        aw.text('(see screenPPI and exportPPI properties in artwork.js)', aw.width * 0.5, aw.height * 0.5 + 15);
+        aw.textAlign(aw.CENTER, aw.CENTER);
+        aw.textSize(6);
+        aw.text('Set correct PPI to get the right measurements', aw.width * 0.5, 15);
+        aw.text('(see screenPPI and exportPPI properties in artwork.js)', aw.width * 0.5, 15 + 10);
+        aw.text('Press Alt+Shift+L (see commandHotKeys property) to start/stop the loop.', aw.width * 0.5, 15 + 20);
+    
+        aw.loop();
+    
+        height2 = aw.height - 50;
     }
 
     aw.draw = function() {
 
         const x1 = aw.random(aw.width);
-        const y1 = aw.random(aw.height);
+        const y1 = aw.random(height2);
         const x2 = aw.random(aw.width);
-        const y2 = aw.random(aw.height);
+        const y2 = aw.random(height2);
 
         const r = aw.random(256);
         const g = aw.random(256);
         const b = aw.random(256);
     
         aw.stroke(r, g, b);
-        aw.line(x1, y1, x2, y2);
+        aw.line(x1, y1 + 50, x2, y2 + 50);
     }
 });

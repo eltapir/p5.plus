@@ -64,7 +64,10 @@ let height2;
 
 function setup() {
 
-    // createCanvas(297, 210, canvasProperties);
+    // this:
+    // createCanvas(210, 297, canvasProperties);
+
+    // or this:
     createCanvas('a4', canvasProperties);
 
     background(255, 255, 255);

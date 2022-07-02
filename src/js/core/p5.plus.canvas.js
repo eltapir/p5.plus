@@ -137,11 +137,13 @@ p5.prototype.createCanvas = function($_createCanvas) {
                 
             this.__noiseSeed = this.__props.noiseSeed
                 ? this.__props.noiseSeed
-                : Math.floor(Math.random() * (10000 - 1000) + 1000);
+                : this.__seed;
+                // : Math.floor(Math.random() * (10000 - 1000) + 1000);
 
             this.__simplexSeed = this.__props.simplexSeed
                 ? this.__props.simplexSeed
-                : Math.floor(Math.random() * (10000 - 1000) + 1000);
+                : this.__seed;
+                // : Math.floor(Math.random() * (10000 - 1000) + 1000);
 
             this.__wallpaperBackground = this.__props.wallpaperBackground;
             this.__canvasColor = this.__props.canvasColor;
