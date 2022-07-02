@@ -50,7 +50,6 @@
   },
   "dependencies": {
     "@tweakpane/plugin-essentials": "^0.1.4",
-    "tinykeys": "^1.4.0",
-    "tweakpane": "^3.1.0"
+    "tinykeys": "^1.4.0"
   }
 }

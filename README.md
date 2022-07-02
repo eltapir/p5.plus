@@ -9,7 +9,6 @@
 
 p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 
-    - gui
     - panning zooming
     - use of mm, cm, inches
     - support for svg (with the p5.js-svg extension)
@@ -21,8 +20,6 @@ p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 [p5.js](https://p5js.org/) : &nbsp;No p5 extension without p5 library
 
 [tinykeys](https://jamiebuilds.github.io/tinykeys/) : &nbsp;Tiny but very nice library for keybindings
-
-[tweakpane](https://cocopon.github.io/tweakpane/) : &nbsp;Compact pane library for fine-tuning parameters and monitoring value changes.
 
 [simplex noise](https://github.com/josephg/noisejs) : &nbsp;Simple library for 2d & 3d perlin noise and simplex noise
 
