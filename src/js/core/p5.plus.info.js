@@ -38,7 +38,6 @@ const info = {
     
             console.log(this.getInfoText());
             this.__printInfo = this._loop ? false : true;
-            this.__updateLoops();
         }
     },
 

@@ -156,10 +156,6 @@ p5.prototype.createCanvas = function($_createCanvas) {
             this.__initialNumberOfLoops = this.__props.initialNumberOfLoops;
 
             this.__cmdHotKeys = { ...this.DEFAULT_COMMAND_HOT_KEYS, ...this.__props.commandHotKeys };
-
-            this.__showPane = this.__props.showPane;
-            this.__showPropertiesInPane = this.__props.showPropertiesInPane;
-            this.__showHotkeysInPane = this.__props.showHotkeysInPane;
             
             // -----------------------------------------------------------------------------------------
 
@@ -199,7 +195,6 @@ p5.prototype.createCanvas = function($_createCanvas) {
             this.__initShadow();
             this.__initXYPane();
             this.__initHotKeys();
-            this.__initCmdPane();
 
             this.randomSeed(this.__seed);
             this.noiseSeed(this.__noiseSeed);
@@ -225,8 +220,6 @@ p5.prototype.createCanvas = function($_createCanvas) {
             this.__setGlobalProperties();
 
             if (this.__renderer === this.P2D) this.drawingContext.scale(this.__unitScale, this.__unitScale);
-
-            this.__updateTweakPanePlayBtn();
 
         } else {
 
@@ -319,8 +312,8 @@ p5.prototype.randomSeed = function($_randomSeed) {
 
         $_randomSeed.call(this, s);
         this.__seed = s;
-        this.__updateSeed();
     }
+    
 }(p5.prototype.randomSeed);
 
 
@@ -332,8 +325,8 @@ p5.prototype.noiseSeed = function($_noiseSeed) {
 
         $_noiseSeed.call(this, s);
         this.__noiseSeed = s;
-        this.__updateNoiseSeed();
     }
+
 }(p5.prototype.noiseSeed);
 
 // !!!
@@ -349,44 +342,3 @@ p5.prototype.noiseSeed = function($_noiseSeed) {
 //         this.__updateSimplexSeed();
 //     }
 // }(p5.prototype.simplexSeed);
-
-
-// loop
-
-p5.prototype.loop = function($_loop) {
-
-    return function(s) {
-
-        $_loop.call(this);
-        this.__updateTweakPanePlayBtn();
-        this.__updateLoops();
-    }
-
-}(p5.prototype.loop);
-
-
-// noLoop
-
-p5.prototype.noLoop = function($_noLoop) {
-
-    return function() {
-
-        $_noLoop.call(this);
-        this.__updateTweakPanePlayBtn();
-        this.__updateLoops();
-    }
-    
-}(p5.prototype.noLoop);
-
-
-// frameRate
-
-p5.prototype.frameRate = function($_frameRate) {
-
-    return function(fr) {
-
-        $_frameRate.call(this, fr);
-        this.__updateTweakPaneFrameRate();
-    }
-    
-}(p5.prototype.frameRate);

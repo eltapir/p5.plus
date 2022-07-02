@@ -148,8 +148,6 @@ const core = {
         //       so it's not for the near future ;p
         //
 
-        this.__updateTweakPaneZoomLabel();
-
         if (!(left || top)) {
 
             this.__cvs.style.left = (this.__aw.offsetWidth - this.__cvsPxWidth * this.__zoom) / 2 + 'px';

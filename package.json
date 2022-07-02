@@ -40,10 +40,10 @@
   "author": "Kris HEYSE",
   "license": "Apache 2.0",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "postcss-preset-env": "^7.5.0",
+    "postcss-preset-env": "^7.7.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-sass": "^1.2.12",
     "rollup-plugin-terser": "^7.0.2"
@@ -51,6 +51,6 @@
   "dependencies": {
     "@tweakpane/plugin-essentials": "^0.1.4",
     "tinykeys": "^1.4.0",
-    "tweakpane": "^3.0.8"
+    "tweakpane": "^3.1.0"
   }
 }

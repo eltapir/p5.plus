@@ -98,10 +98,6 @@ const constants = {
         disableFriendlyErrors: true,    // boolean: friendly errors or not
     
         commandHotKeys: {},             // object: see const DEFAULT_COMMAND_HOT_KEYS
-    
-        showPane: true,                 // boolean: show / hide command/info pane
-        showPropertiesInPane: true,     // boolean: show / hide info properties
-        showHotkeysInPane: false,       // boolean: show / hide info hotkeys
     },
     
 

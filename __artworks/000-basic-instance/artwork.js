@@ -46,10 +46,6 @@ const canvasProperties = {
 
     multiLoopSteps: 10,             // number of loops for multi loop
 
-    showPane: true,                 // show / hide command pane
-    showPropertiesInPane: true,     // boolean: show / hide info properties
-    showHotkeysInPane: false,       // boolean: show / hide info hotkeys
-
     commandHotKeys: {                       // object:
 
         cmdLoop: 'Alt+Shift+L',             // loop / no loop

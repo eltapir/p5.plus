@@ -28,6 +28,7 @@ import '../scss/p5.plus.scss';
 // -------------------------------------------------------------------------------------------------
 import './core/p5.plus.canvas.js';
 
+
 // scripts: p5 extensions
 // -------------------------------------------------------------------------------------------------
 import { constants } from './core/p5.plus.constants.js';
@@ -38,7 +39,6 @@ import { paperSize } from './core/p5.plus.paperSize.js';
 import { simplex } from './core/p5.plus.simplex.js';
 import { utilities } from './core/p5.plus.utilities.js';
 
-import { cmdPane } from './ui/p5.plus.cmdPane.js';
 import { hotkeys } from './ui/p5.plus.hotkeys.js';
 import { commands } from './ui/p5.plus.commands.js';
 import { xyPane } from './ui/p5.plus.xyPane.js';
@@ -55,16 +55,13 @@ p5.extend(paperSize);
 p5.extend(simplex);
 p5.extend(utilities);
 
-p5.extend(cmdPane);
 p5.extend(commands);
 p5.extend(hotkeys);
 p5.extend(xyPane);
 
-// =================================================================================================
 
-//
-// override simplexSeed method
-//
+// OVERRIDES
+// =================================================================================================
 
 p5.prototype.simplexSeed = function($_simplexSeed) {
 
@@ -72,7 +69,6 @@ p5.prototype.simplexSeed = function($_simplexSeed) {
 
         $_simplexSeed.call(this, s);
         this.__simplexSeed = s;
-        this.__updateSimplexSeed();
     }
     
 }(p5.prototype.simplexSeed);

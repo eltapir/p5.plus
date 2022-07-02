@@ -46,10 +46,6 @@ const canvasProperties = {
 
     multiLoopSteps: 10,             // number of loops for multi loop
 
-    showPane: true,                 // show / hide command pane
-    showPropertiesInPane: true,     // boolean: show / hide info properties
-    showHotkeysInPane: false,       // boolean: show / hide info hotkeys
-
     commandHotKeys: {                       // object:
 
         cmdLoop: 'Alt+Shift+L',             // loop / no loop
@@ -64,9 +60,12 @@ const canvasProperties = {
     }
 }
 
+let height2;
+
 function setup() {
 
-    createCanvas(297, 210, canvasProperties);
+    // createCanvas(297, 210, canvasProperties);
+    createCanvas('a4', canvasProperties);
 
     background(255, 255, 255);
 
@@ -74,24 +73,27 @@ function setup() {
     strokeCap(ROUND);
 
     textAlign(CENTER, CENTER);
-    textSize(7);
-    text('Set correct PPI to get the right measurements', width * 0.5, height * 0.5);
-    text('(see screenPPI and exportPPI properties in artwork.js)', width * 0.5, height * 0.5 + 15);
+    textSize(6);
+    text('Set correct PPI to get the right measurements', width * 0.5, 15);
+    text('(see screenPPI and exportPPI properties in artwork.js)', width * 0.5, 15 + 10);
+    text('Press Alt+Shift+L (see commandHotKeys property) to start/stop the loop.', width * 0.5, 15 + 20);
 
-    // loop();
+    loop();
+
+    height2 = height - 50;
 }
 
 function draw() {
 
     const x1 = random(width);
-    const y1 = random(height);
+    const y1 = random(height2);
     const x2 = random(width);
-    const y2 = random(height);
+    const y2 = random(height2);
 
     const r = random(256);
     const g = random(256);
     const b = random(256);
 
     stroke(r, g, b);
-    line(x1, y1, x2, y2);
+    line(x1, y1 + 50, x2, y2 + 50);
 }

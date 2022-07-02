@@ -35,7 +35,6 @@ const commands = {
             this.loop();
         }
 
-        this.__updateTweakPanePlayBtn();
     },
 
     __cmdStep() {

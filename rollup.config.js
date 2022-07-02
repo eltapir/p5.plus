@@ -16,7 +16,7 @@ const outputBaseName = path.resolve(__dirname, outputFolder, `${pkg.name}`);
 const artworksBaseName = path.resolve(__dirname, artworksFolder, `${pkg.name}`);
 const isProduction = process.env.NODE_ENV === 'production';
 
-const output = [
+const outputDev = [
 
 	{
 		file: `${outputBaseName}.js`,
@@ -30,39 +30,32 @@ const output = [
 	}	
 ];
 
-if (isProduction) {
+const outputProd = [
 
-	output.push(
-
-		{
-			file: `${outputBaseName}.js`,
-			format: 'umd',
-			name: pkg.name,
-			plugins: [
-				terser()
-			]
-		}
-	);
-
-	output.push(
-
-		{
-			file: `${artworksBaseName}.js`,
-			format: 'umd',
-			name: pkg.name,
-			plugins: [
-				terser()
-			]
-		}
-	);
-}
+	{
+		file: `${outputBaseName}.js`,
+		format: 'umd',
+		name: pkg.name,
+		plugins: [
+			terser()
+		]
+	},
+	{
+		file: `${artworksBaseName}.js`,
+		format: 'umd',
+		name: pkg.name,
+		plugins: [
+			terser()
+		]
+	}
+]
 
 export default [
 
 	{
 		input: `src/js/${pkg.name}.js`,
 
-		output: output,
+		output: (isProduction ? outputProd : outputDev),
 
 		plugins: [
 
