@@ -850,7 +850,7 @@
     };
 
     var name = "p5.plus";
-    var version = "0.2.0";
+    var version = "0.2.2";
     var description = "p5.js plugin to help creating static generative art";
     var scripts = {
     	prebuild: "rm -rf lib",
@@ -884,8 +884,7 @@
     	"rollup",
     	"svg",
     	"static",
-    	"tinykeys",
-    	"tweakpane"
+    	"tinykeys"
     ];
     var author = "Kris HEYSE";
     var license = "Apache 2.0";
