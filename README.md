@@ -9,11 +9,10 @@
 
 p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 
-    - panning zooming
+    - panning and zooming
     - use of mm, cm, inches
     - support for svg (with the p5.js-svg extension)
     - export with one click to png (p2d mode) or svg (svg mode)
-    - shortkeys
 
 ### CREDITS
 
