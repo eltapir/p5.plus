@@ -1,0 +1,107 @@
+/* ============================================================================================== */
+/* MODAL STYLES                                                                                         */
+/* ============================================================================================== */
+
+.modal {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    background: var(--modal-background);
+
+    padding: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms ease-in;
+}
+
+
+.modal.is-visible {
+
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-dialog {
+
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 5px;
+    background: var(--modal-dialog-background);
+    overflow: auto;
+    cursor: default;
+}
+
+.modal-dialog > * {
+
+    padding: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+
+    background: var(--modal-header-background);
+    color: var(--modal-header-color);
+}
+
+.modal-header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.modal-header .close-modal {
+
+    font-size: 1.5rem;
+}
+
+.modal-close-button {
+
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: inherit;
+}
+
+.modal p + p {
+
+    margin-top: 1rem;
+}
+
+.modal-content {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content p {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-content p .shortkey {
+
+    text-align: right;
+    margin-left: 2rem;
+}
+
+.header-small-text {
+
+    font-size: var(--modal-small-text);
+}

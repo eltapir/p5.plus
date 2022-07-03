@@ -197,6 +197,7 @@ p5.prototype.createCanvas = function($_createCanvas) {
             this.__initShadow();
             this.__initXYPane();
             this.__initHotKeys();
+            this.__initModal();
 
             this.randomSeed(this.__seed);
             this.noiseSeed(this.__noiseSeed);

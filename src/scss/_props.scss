@@ -59,45 +59,10 @@
     --xy-pane-info-color: #fff;
     --xy-pane-gap: 2px;
 
-    --burger-width: 1.2rem;
-    --burger-height: 1rem;
-    --burger-padding-top: 0.75rem;
-    --burger-padding-bottom: var(--burger-padding-top);
-    --burger-padding-right: 0.75rem;
-    --burger-padding-left: var(--burger-padding-right);
-    --burger-slice-height: 0.125rem;
-    --burger-color: #ddd;
-    --burger-cross-color: #b55;
-    --burger-animation-speed: 300ms;
+    --modal-background: rgba(0, 0, 0, 0.75);
+    --modal-dialog-background: white;
+    --modal-header-background: grey;
+    --modal-header-color: #335;
+    --modal-small-text: 0.7rem;
 
-    --cmd-pane-color: #ccc;
-    --cmd-pane-bgcolor: #3e3f44;
-    --cmd-pane-width: 280px;
-    --cmd-pane-padding: var(--burger-padding-left);
-    --cmd-pane-padding-top: calc(2 * var(--burger-padding-top) + var(--burger-height));
-    --cmd-pane-slide-speed: var(--burger-animation-speed);
-
-    // tweakpane
-    // ---------------------------------------------------------------------------------------------
-    --tp-base-background-color: hsla(230, 7%, 17%, 1.00);
-    --tp-base-shadow-color: hsla(0, 0%, 0%, 0.20);
-    --tp-button-background-color: hsla(230, 7%, 70%, 1.00);
-    --tp-button-background-color-active: hsla(230, 7%, 85%, 1.00);
-    --tp-button-background-color-focus: hsla(230, 7%, 80%, 1.00);
-    --tp-button-background-color-hover: hsla(230, 7%, 75%, 1.00);
-    --tp-button-foreground-color: hsla(230, 7%, 17%, 1.00);
-    --tp-container-background-color: hsla(230, 7%, 75%, 0.10);
-    --tp-container-background-color-active: hsla(230, 7%, 75%, 0.25);
-    --tp-container-background-color-focus: hsla(230, 7%, 75%, 0.20);
-    --tp-container-background-color-hover: hsla(230, 7%, 75%, 0.15);
-    --tp-container-foreground-color: hsla(230, 7%, 75%, 1.00);
-    --tp-groove-foreground-color: hsla(230, 7%, 75%, 0.10);
-    --tp-input-background-color: hsla(230, 7%, 75%, 0.10);
-    --tp-input-background-color-active: hsla(230, 7%, 75%, 0.25);
-    --tp-input-background-color-focus: hsla(230, 7%, 75%, 0.20);
-    --tp-input-background-color-hover: hsla(230, 7%, 75%, 0.15);
-    --tp-input-foreground-color: hsla(230, 7%, 75%, 1.00);
-    --tp-label-foreground-color: hsla(230, 7%, 75%, 0.70);
-    --tp-monitor-background-color: hsla(230, 7%, 0%, 0.20);
-    --tp-monitor-foreground-color: hsla(230, 7%, 75%, 0.70);
 }

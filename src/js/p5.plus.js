@@ -41,6 +41,7 @@ import { utilities } from './core/p5.plus.utilities.js';
 
 import { hotkeys } from './ui/p5.plus.hotkeys.js';
 import { commands } from './ui/p5.plus.commands.js';
+import { modal } from './ui/p5.plus.modal.js';
 import { xyPane } from './ui/p5.plus.xyPane.js';
 
 
@@ -57,6 +58,7 @@ p5.extend(utilities);
 
 p5.extend(commands);
 p5.extend(hotkeys);
+p5.extend(modal);
 p5.extend(xyPane);
 
 
