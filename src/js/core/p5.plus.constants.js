@@ -27,14 +27,14 @@ const constants = {
     DEFAULT_COMMAND_HOT_KEYS: {
 
         // loop
-        cmdLoop: 'Alt+Shift+L',
+        cmdLoop: 'L',
         cmdLoopStep: '+',
         cmdLoopMultiSteps: '*',
     
         // zoom
-        cmdZoomFit: 'Alt+Shift+F',
-        cmdZoomOne: 'Alt+Shift+O',
-        cmdZoomMax: 'Alt+Shift+M',
+        cmdZoomFit: 'F',
+        cmdZoomOne: '1',
+        cmdZoomMax: 'M',
     
         // show/hide coordinates
         cmdShowCoordinates: 'Alt+Shift+C',
@@ -43,7 +43,7 @@ const constants = {
         cmdShowShadow: 'Alt+Shift+S',
     
         // export
-        cmdExport: 'Alt+Shift+E',
+        cmdExport: 'E',
     },
 
     

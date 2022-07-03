@@ -39,6 +39,13 @@ const modal = {
                     <section class="modal-content">
 
                         <p>
+                            <span class="command">Loop</span>
+                            <span class="shortkey">
+                                ${this.__getKeyString(this.__cmdHotKeys.cmdLoop)}
+                            </span>
+                        </p>
+
+                        <p>
                             <span class="command">Zoom</span>
                             <span class="shortkey">
                                 ${this.__getKeyString('wheel')}
@@ -67,19 +74,26 @@ const modal = {
                         </p>
                         
                         <p>
-                            <span class="command">Export to .svg file</span>
+                            <span class="command">Export to file ( .png / .svg )</span>
                             <span class="shortkey">
                                 ${this.__getKeyString(this.__cmdHotKeys.cmdExport)}
                             </span>
                         </p>
                         
                         <p>
-                            <span class="command">Toggle shadow</span>
+                            <span class="command">Show/hide shadow</span>
                             <span class="shortkey">
                                 ${this.__getKeyString(this.__cmdHotKeys.cmdShowShadow)}
                             </span>
                         </p>
-                        
+                                                
+                        <p>
+                            <span class="command">Show/hide coordinates</span>
+                            <span class="shortkey">
+                                ${this.__getKeyString(this.__cmdHotKeys.cmdShowCoordinates)}
+                            </span>
+                        </p>
+
                     </section>
 
                 </div>
@@ -103,8 +117,6 @@ const modal = {
     
                 case 'F1':
 
-                console.log('F1');
-                
                     event.preventDefault();
                     this.__modal.classList.add('is-visible');
                     break;
