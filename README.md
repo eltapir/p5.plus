@@ -27,7 +27,7 @@ p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 
 ### CHANGES TO THE NORMAL WAY OF USING p5.js
 
-- In `createCanvas()`,  Instead of providing `width` and `height` you have to provide an object
+- `createCanvas()` accepts different arguments, Instead of providing `width` and `height` you have to provide an extra object. see examples for correct use.
 - `noLoop()` is the default, since the main purpose of this addon is to create static art.
 
 <br />
