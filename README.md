@@ -1,18 +1,14 @@
 ## p5.plus ( !!! alpha stage / things will change !!! )
 ### (replacement for p5.start2d.js)
 
-<br/>
-
-![Screenshot p5.plus](./__assets/p5plus.jpg "screenshot of p5.plus extension")
-
-<br/>
-
 p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 
     - panning and zooming
     - use of mm, cm, inches
     - support for svg (with the p5.js-svg extension)
     - export with one click to png (p2d mode) or svg (svg mode)
+
+<br />
 
 ### CREDITS
 
@@ -29,6 +25,24 @@ p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 
 - `createCanvas()` accepts different arguments, Instead of providing `width` and `height` you have to provide an extra object. see examples for correct use.
 - `noLoop()` is the default, since the main purpose of this addon is to create static art.
+
+<br />
+
+### USE (SEE EXAMPLES)
+
+add the following scripts to your index.html:
+
+p5.js (always needed)
+`<script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>`
+
+p5.js-svg (only needed if you want to use svg mode)
+`<script defer src="https://unpkg.com/p5.js-svg@1.3.1"></script>`
+
+p5.plus (always needed)
+`<script defer src="https://cdn.jsdelivr.net/gh/eltapir/p5.plus@latest/lib/p5.plus.js"></script>`
+
+add your sketch/artwork
+`<script defer src="./artwork.js"></script>`
 
 <br />
 
