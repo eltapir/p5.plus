@@ -1,12 +1,15 @@
 ## p5.plus ( !!! alpha stage / things will change !!! )
-### (replacement for p5.start2d.js)
 
-p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
+p5.plus is an p5.js extension to ease the creation of 2D Static art
+(p5.plus is a replacement for my [p5.start2d.js](https://github.com/eltapir/p5.start2d.js) extension)
+
+The following functionality is added (more to come) :
 
     - panning and zooming
     - use of mm, cm, inches
     - support for svg (with the p5.js-svg extension)
     - export with one click to png (p2d mode) or svg (svg mode)
+    - ...
 
 <br />
 
@@ -17,7 +20,6 @@ p5.plus is an p5.js extension to ease the creation of 2D Static art adding:
 [tinykeys](https://jamiebuilds.github.io/tinykeys/) : &nbsp;Tiny but very nice library for keybindings
 
 [simplex noise](https://github.com/josephg/noisejs) : &nbsp;Simple library for 2d & 3d perlin noise and simplex noise
-
 
 <br />
 
