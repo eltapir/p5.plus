@@ -33,7 +33,7 @@ const outputDev = [
 const outputProd = [
 
 	{
-		file: `${outputBaseName}.min.js`,
+		file: `${outputBaseName}.js`,
 		format: 'umd',
 		name: pkg.name,
 		plugins: [
@@ -41,7 +41,7 @@ const outputProd = [
 		]
 	},
 	{
-		file: `${artworksBaseName}.min.js`,
+		file: `${artworksBaseName}.js`,
 		format: 'umd',
 		name: pkg.name,
 		plugins: [
