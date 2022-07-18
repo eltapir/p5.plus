@@ -48,17 +48,19 @@ const canvasProperties = {
 
     commandHotKeys: {                       // object:
 
-        cmdLoop: 'Alt+Shift+L',             // loop / no loop
+        cmdLoop: 'L',                       // loop / no loop
         cmdLoopStep: '+',                   // single step/loop
         cmdLoopMultiSteps: '*',             // multi step/loop (see multiLoopSteps property)
-        cmdZoomFit: 'Alt+Shift+F',          // zoom fit
-        cmdZoomOne: 'Alt+Shift+O',          // zoom 1:1 (correct ppi settings are important here)
-        cmdZoomMax: 'Alt+Shift+M',          // zoom maximum
+        cmdZoomFit: 'F',                    // zoom fit
+        cmdZoomOne: 'O',                    // zoom 1:1 (correct ppi settings are important here)
+        cmdZoomMax: 'M',                    // zoom maximum
         cmdShowCoordinates: 'Alt+Shift+C',  // show / hide mouse coordinates
         cmdShowShadow: 'Alt+Shift+S',       // show / hide canvas shadow
-        cmdExport: 'Alt+Shift+E',           // export canvas (png -> canvas mode | svg -> svg mode)
+        cmdExport: 'E',                     // export canvas (png -> canvas mode | svg -> svg mode)
     }
 };
+
+const padding = 20;
 
 let height2;
 
@@ -72,8 +74,8 @@ new p5(function(aw) {
         aw.strokeWeight(2);
         aw.strokeCap(aw.ROUND);
     
-        // aw.frameRate(1);
-        // aw.loop();
+        aw.frameRate(60);
+        aw.loop();
 
         aw.textAlign(aw.CENTER, aw.CENTER);
         aw.textAlign(aw.CENTER, aw.CENTER);
@@ -81,22 +83,23 @@ new p5(function(aw) {
         aw.text('Set correct PPI to get the right measurements', aw.width * 0.5, 15);
         aw.text('(see screenPPI and exportPPI properties in artwork.js)', aw.width * 0.5, 15 + 10);
         aw.text('Press Alt+Shift+L (see commandHotKeys property) to start/stop the loop.', aw.width * 0.5, 15 + 20);
-    
-        aw.loop();
+        aw.text('Press <F1> for HELP', aw.width * 0.5, 15 + 35);
     
         height2 = aw.height - 50;
     }
 
     aw.draw = function() {
 
-        const x1 = aw.random(aw.width);
-        const y1 = aw.random(height2);
-        const x2 = aw.random(aw.width);
-        const y2 = aw.random(height2);
+        const x1 = aw.random(aw.width - 2 * padding);
+        const y1 = aw.random(height2 - 2 * padding);
+        const x2 = aw.random(aw.width - 2 * padding);
+        const y2 = aw.random(height2 - 2 * padding);
 
         const r = aw.random(256);
         const g = aw.random(256);
         const b = aw.random(256);
+
+        aw.translate(padding, padding);
     
         aw.stroke(r, g, b);
         aw.line(x1, y1 + 50, x2, y2 + 50);
@@ -114,8 +117,8 @@ new p5(function(aw) {
         aw.strokeWeight(2);
         aw.strokeCap(aw.ROUND);
 
-        // aw.frameRate(60);
-        // aw.loop();
+        aw.frameRate(60);
+        aw.loop();
 
         aw.textAlign(aw.CENTER, aw.CENTER);
         aw.textAlign(aw.CENTER, aw.CENTER);
@@ -123,23 +126,24 @@ new p5(function(aw) {
         aw.text('Set correct PPI to get the right measurements', aw.width * 0.5, 15);
         aw.text('(see screenPPI and exportPPI properties in artwork.js)', aw.width * 0.5, 15 + 10);
         aw.text('Press Alt+Shift+L (see commandHotKeys property) to start/stop the loop.', aw.width * 0.5, 15 + 20);
-    
-        aw.loop();
+        aw.text('Press <F1> for HELP', aw.width * 0.5, 15 + 35);
     
         height2 = aw.height - 50;
     }
 
     aw.draw = function() {
 
-        const x1 = aw.random(aw.width);
-        const y1 = aw.random(height2);
-        const x2 = aw.random(aw.width);
-        const y2 = aw.random(height2);
+        const x1 = aw.random(aw.width - 2 * padding);
+        const y1 = aw.random(height2 - 2 * padding);
+        const x2 = aw.random(aw.width - 2 * padding);
+        const y2 = aw.random(height2 - 2 * padding);
 
         const r = aw.random(256);
         const g = aw.random(256);
         const b = aw.random(256);
-    
+
+        aw.translate(padding, padding);
+
         aw.stroke(r, g, b);
         aw.line(x1, y1 + 50, x2, y2 + 50);
     }

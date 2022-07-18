@@ -32,7 +32,7 @@
 
 .xy-pane {
 
-    background-color: var(--xy-pane-bgcolor);
+    background: var(--xy-pane-bgcolor);
 
     font-size: var(--xy-pane-font-size);
     text-align: center;
@@ -111,13 +111,13 @@
 
     .label {
 
-        background-color: var(--xy-pane-label-bgcolor);
+        // background-color: var(--xy-pane-label-bgcolor);
         color: var(--xy-pane-label-color);
     }
 
     .info {
 
-        background-color: var(--xy-pane-info-bgcolor);
+        // background-color: var(--xy-pane-info-bgcolor);
         color: var(--xy-pane-info-color);
     }
 }

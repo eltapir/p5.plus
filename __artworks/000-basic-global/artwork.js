@@ -48,17 +48,19 @@ const canvasProperties = {
 
     commandHotKeys: {                       // object:
 
-        cmdLoop: 'Alt+Shift+L',             // loop / no loop
+        cmdLoop: 'L',                       // loop / no loop
         cmdLoopStep: '+',                   // single step/loop
         cmdLoopMultiSteps: '*',             // multi step/loop (see multiLoopSteps property)
-        cmdZoomFit: 'Alt+Shift+F',          // zoom fit
-        cmdZoomOne: 'Alt+Shift+O',          // zoom 1:1 (correct ppi settings are important here)
-        cmdZoomMax: 'Alt+Shift+M',          // zoom maximum
+        cmdZoomFit: 'F',                    // zoom fit
+        cmdZoomOne: 'O',                    // zoom 1:1 (correct ppi settings are important here)
+        cmdZoomMax: 'M',                    // zoom maximum
         cmdShowCoordinates: 'Alt+Shift+C',  // show / hide mouse coordinates
         cmdShowShadow: 'Alt+Shift+S',       // show / hide canvas shadow
-        cmdExport: 'Alt+Shift+E',           // export canvas (png -> canvas mode | svg -> svg mode)
+        cmdExport: 'E',                     // export canvas (png -> canvas mode | svg -> svg mode)
     }
 }
+
+const padding = 20;
 
 let height2;
 
@@ -79,19 +81,22 @@ function setup() {
     textSize(6);
     text('Set correct PPI to get the right measurements', width * 0.5, 15);
     text('(see screenPPI and exportPPI properties in artwork.js)', width * 0.5, 15 + 10);
-    text('Press Alt+Shift+L (see commandHotKeys property) to start/stop the loop.', width * 0.5, 15 + 20);
+    text('Press <L> (see commandHotKeys property) to start/stop the loop.', width * 0.5, 15 + 20);
+    text('Press <F1> for HELP', width * 0.5, 15 + 35);
 
-    loop();
+    // loop();
 
     height2 = height - 50;
 }
 
 function draw() {
 
-    const x1 = random(width);
-    const y1 = random(height2);
-    const x2 = random(width);
-    const y2 = random(height2);
+    translate(padding, padding);
+
+    const x1 = random(width - 2 * padding);
+    const y1 = random(height2 - 2 * padding);
+    const x2 = random(width - 2 * padding);
+    const y2 = random(height2 - 2 * padding);
 
     const r = random(256);
     const g = random(256);
