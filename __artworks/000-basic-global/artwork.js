@@ -104,5 +104,6 @@ function draw() {
     const b = random(256);
 
     stroke(r, g, b);
+    
     line(x1, y1 + 50, x2, y2 + 50);
 }
