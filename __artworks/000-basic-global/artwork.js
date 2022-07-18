@@ -82,6 +82,7 @@ function setup() {
     text('Set correct PPI to get the right measurements', width * 0.5, 15);
     text('(see screenPPI and exportPPI properties in artwork.js)', width * 0.5, 15 + 10);
     text('Press <L> (see commandHotKeys property) to start/stop the loop.', width * 0.5, 15 + 20);
+    textSize(10);
     text('Press <F1> for HELP', width * 0.5, 15 + 35);
 
     loop();
