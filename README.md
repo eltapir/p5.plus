@@ -11,7 +11,6 @@ The following functionality is added (more to come) :
     - export with one click to png (p2d mode) or svg (svg mode)
     - ...
 
-<br />
 
 ### CREDITS
 

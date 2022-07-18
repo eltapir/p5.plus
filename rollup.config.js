@@ -10,6 +10,8 @@ import {terser} from 'rollup-plugin-terser';
 
 import pkg from './package.json';
 
+// -------------------------------------------------------------------------------------------------
+
 const outputFolder = 'lib';
 const artworksFolder = `__artworks/${pkg.name}`;
 const outputBaseName = path.resolve(__dirname, outputFolder, `${pkg.name}`);
@@ -48,7 +50,9 @@ const outputProd = [
 			terser()
 		]
 	}
-]
+];
+
+// -------------------------------------------------------------------------------------------------
 
 export default [
 
