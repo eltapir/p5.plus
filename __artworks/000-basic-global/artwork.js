@@ -84,7 +84,7 @@ function setup() {
     text('Press <L> (see commandHotKeys property) to start/stop the loop.', width * 0.5, 15 + 20);
     text('Press <F1> for HELP', width * 0.5, 15 + 35);
 
-    // loop();
+    loop();
 
     height2 = height - 50;
 }
