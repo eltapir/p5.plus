@@ -28,8 +28,8 @@ const constants = {
 
         // loop
         cmdLoop: 'L',
-        cmdLoopStep: '+',
-        cmdLoopMultiSteps: '*',
+        cmdLoopStep: 'Alt+Shift+L',
+        cmdLoopMultiSteps: 'Alt+Shift+M',
     
         // zoom
         cmdZoomFit: 'F',

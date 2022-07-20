@@ -46,6 +46,20 @@ const modal = {
                         </p>
 
                         <p>
+                            <span class="command">Loop one Step</span>
+                            <span class="shortkey">
+                                ${this.__getKeyString(this.__cmdHotKeys.cmdLoopStep)}
+                            </span>
+                        </p>
+
+                        <p>
+                            <span class="command">Loop multiple steps</span>
+                            <span class="shortkey">
+                                ${this.__getKeyString(this.__cmdHotKeys.cmdLoopMultiSteps)}
+                            </span>
+                        </p>
+
+                        <p>
                             <span class="command">Zoom</span>
                             <span class="shortkey">
                                 ${this.__getKeyString('wheel')}
