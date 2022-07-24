@@ -13,7 +13,7 @@ import pkg from './package.json';
 // -------------------------------------------------------------------------------------------------
 
 const outputFolder = 'lib';
-const artworksFolder = `examples/${pkg.name}`;
+const artworksFolder = `artworks/${pkg.name}`;
 const outputBaseName = path.resolve(__dirname, outputFolder, `${pkg.name}`);
 const artworksBaseName = path.resolve(__dirname, artworksFolder, `${pkg.name}`);
 const isProduction = process.env.NODE_ENV === 'production';
