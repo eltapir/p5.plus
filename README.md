@@ -1,7 +1,7 @@
 ## p5.plus
 
 #### p5.plus is an p5.js extension to ease the creation of 2D Static art.
-Its a personal sandbox for testing functionality that can make my live easier ;p
+#### Its a kind of sandbox for testing functionality that can make live easier ;p
 
 <br/>
 
