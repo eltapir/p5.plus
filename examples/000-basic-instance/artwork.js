@@ -84,7 +84,9 @@ new p5(function(aw) {
         aw.text('(see screenPPI and exportPPI properties in artwork.js)', aw.width * 0.5, 15 + 10);
         aw.text('Press Alt+Shift+L (see commandHotKeys property) to start/stop the loop.', aw.width * 0.5, 15 + 20);
         aw.text('Press <F1> for HELP', aw.width * 0.5, 15 + 35);
-    
+        aw.textSize(6);
+        aw.text('( click on the canvas first )', aw.width * 0.5, 15 + 45);
+        
         height2 = aw.height - 50;
     }
 
@@ -127,6 +129,8 @@ new p5(function(aw) {
         aw.text('(see screenPPI and exportPPI properties in artwork.js)', aw.width * 0.5, 15 + 10);
         aw.text('Press Alt+Shift+L (see commandHotKeys property) to start/stop the loop.', aw.width * 0.5, 15 + 20);
         aw.text('Press <F1> for HELP', aw.width * 0.5, 15 + 35);
+        aw.textSize(6);
+        aw.text('( click on the canvas first )', aw.width * 0.5, 15 + 45);
     
         height2 = aw.height - 50;
     }

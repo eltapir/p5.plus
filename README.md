@@ -1,7 +1,7 @@
-## p5.plus ( !!! alpha stage / things will change !!! )
+## p5.plus
 
-p5.plus is an p5.js extension to ease the creation of 2D Static art  
-(p5.plus is a replacement for my [p5.start2d.js](https://github.com/eltapir/p5.start2d.js) extension)
+p5.plus is an p5.js extension to ease the creation of 2D Static art.
+Its a personal sandbox for testing functionality that can make my live easier ;p
 
 The following functionality is added (more to come) :
 

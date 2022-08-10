@@ -84,6 +84,8 @@ function setup() {
     text('Press <L> (see commandHotKeys property) to start/stop the loop.', width * 0.5, 15 + 20);
     textSize(10);
     text('Press <F1> for HELP', width * 0.5, 15 + 35);
+    textSize(6);
+    text('( click on the canvas first )', width * 0.5, 15 + 45);
 
     loop();
 
